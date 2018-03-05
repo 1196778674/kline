@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BITARK首页</title>
+    <style>
+      .canvas{width:1400px;height:600px;border:1px solid #ccc;position:relative;}
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="data.json"></script>
+    <script src="bignumber.min.js"></script>
+    <script src="bn.js"></script>
+    <script src="kline.draw.js"></script>
+    <script>
+      $(function(){
+        var klineChart = new KLineChart({
+          container: document.getElementById('test123'),
+          klineType: 'xrpbtc',
+          fixedNumber: 8
+        })
+        klineChart.updateKlienDatas(datas)
+      })
+    </script>
+  </head>
+  <body>
+    <div id="test123" class="canvas">
+    </div>
+  </body>
+</html>
