@@ -5767,7 +5767,7 @@
       var k = i.toY(l[d]);
       f.push({x: e, y: k, w: 6, h: 1});
       f.push({x: o - 6, y: k, w: 6, h: 1});
-      c.fillText(parseFloat(l[d]).toFixed(h === 'frame0.k0.indic0Range' ? 2 : GLOBAL_VAR.fixedNumber), a, k);
+      c.fillText(parseFloat(l[d]).toFixed(h === 'frame0.k0.indic0Range' ? 0 : GLOBAL_VAR.fixedNumber), a, k);
     }
     if (f.length > 0) {
       c.fillStyle = g.getColor(Theme.Color.Grid1);
@@ -6264,7 +6264,7 @@
       c = j.getDataSource(this.getDataSourceName()).getDecimalDigits();
     }
     if (i.toString().substring(i.toString().indexOf('.')).length >= GLOBAL_VAR.fixedNumber) {
-      c = GLOBAL_VAR.fixedNumber
+      c = e === 'frame0.k0.indic0Range' ? 0 : GLOBAL_VAR.fixedNumber
     }
     b.fillText(String.fromFloat(i, c), a.getCenter(), g);
   };
