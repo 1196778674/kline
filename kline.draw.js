@@ -180,7 +180,7 @@
     return -1;
   };
   String.fromFloat = function(a, c) {
-    var d = utilsNum.BN(a).toFixed(c);
+    var d = a.toFixed(c);
     for (var b = d.length - 1; b >= 0; b--) {
       if (d[b] == ".") {
         return d.substring(0, b);
@@ -5125,16 +5125,16 @@
       if (!Plotter.drawString(c, "时间: " + k + "-" + A + "-" + z + "  " + f + ":" + l, a)) {
         return;
       }
-      if (!Plotter.drawString(c, "  开: " + utilsNum.BN(C.open).toFixed(i), a)) {
+      if (!Plotter.drawString(c, "  开: " + C.open.toFixed(i), a)) {
         return;
       }
-      if (!Plotter.drawString(c, "  高: " + utilsNum.BN(C.high).toFixed(i), a)) {
+      if (!Plotter.drawString(c, "  高: " + C.high.toFixed(i), a)) {
         return;
       }
-      if (!Plotter.drawString(c, "  低: " + utilsNum.BN(C.low).toFixed(i), a)) {
+      if (!Plotter.drawString(c, "  低: " + C.low.toFixed(i), a)) {
         return;
       }
-      if (!Plotter.drawString(c, "  收: " + utilsNum.BN(C.close).toFixed(i), a)) {
+      if (!Plotter.drawString(c, "  收: " + C.close.toFixed(i), a)) {
         return;
       }
     } else {
@@ -5142,16 +5142,16 @@
         if (!Plotter.drawString(c, "DATE: " + k + "-" + A + "-" + z + "  " + f + ":" + l, a)) {
           return;
         }
-        if (!Plotter.drawString(c, "  O: " + utilsNum.BN(C.open).toFixed(i), a)) {
+        if (!Plotter.drawString(c, "  O: " + C.open.toFixed(i), a)) {
           return;
         }
-        if (!Plotter.drawString(c, "  H: " + utilsNum.BN(C.high).toFixed(i), a)) {
+        if (!Plotter.drawString(c, "  H: " + C.high.toFixed(i), a)) {
           return;
         }
-        if (!Plotter.drawString(c, "  L: " + utilsNum.BN(C.low).toFixed(i), a)) {
+        if (!Plotter.drawString(c, "  L: " + C.low.toFixed(i), a)) {
           return;
         }
-        if (!Plotter.drawString(c, "  C: " + utilsNum.BN(C.close).toFixed(i), a)) {
+        if (!Plotter.drawString(c, "  C: " + C.close.toFixed(i), a)) {
           return;
         }
       } else {
@@ -5159,16 +5159,16 @@
           if (!Plotter.drawString(c,"時間: " + k + "-" + A + "-" + z + "  " + f + ":" + l, a)) {
             return;
           }
-          if (!Plotter.drawString(c, "  開: " + utilsNum.BN(C.open).toFixed(i), a)) {
+          if (!Plotter.drawString(c, "  開: " + C.open.toFixed(i), a)) {
             return;
           }
-          if (!Plotter.drawString(c, "  高: " + utilsNum.BN(C.high).toFixed(i), a)) {
+          if (!Plotter.drawString(c, "  高: " + C.high.toFixed(i), a)) {
             return;
           }
-          if (!Plotter.drawString(c, "  低: " + utilsNum.BN(C.low).toFixed(i), a)) {
+          if (!Plotter.drawString(c, "  低: " + C.low.toFixed(i), a)) {
             return;
           }
-          if (!Plotter.drawString(c, "  收: " + utilsNum.BN(C.close).toFixed(i), a)) {
+          if (!Plotter.drawString(c, "  收: " + C.close.toFixed(i), a)) {
             return;
           }
         }
@@ -5211,26 +5211,26 @@
     }
     var d = (C.high - C.low) / C.low * 100;
     if (D == "zh-cn") {
-      if (!Plotter.drawString(c, "  振幅: " + utilsNum.BN(d).toFixed(2) + " %", a)) {
+      if (!Plotter.drawString(c, "  振幅: " + d.toFixed(2) + " %", a)) {
         return;
       }
-      if (!Plotter.drawString(c, "  量: " + utilsNum.BN(C.volume).toFixed(2), a)) {
+      if (!Plotter.drawString(c, "  量: " + C.volume.toFixed(2), a)) {
         return;
       }
     } else {
       if (D == "en-us") {
-        if (!Plotter.drawString(c, "  AMPLITUDE: " + utilsNum.BN(d).toFixed(2) + " %", a)) {
+        if (!Plotter.drawString(c, "  AMPLITUDE: " + d.toFixed(2) + " %", a)) {
           return;
         }
-        if (!Plotter.drawString(c, "  V: " + utilsNum.BN(C.volume).toFixed(2), a)) {
+        if (!Plotter.drawString(c, "  V: " + C.volume.toFixed(2), a)) {
           return;
         }
       } else {
         if (D == "zh-tw") {
-          if (!Plotter.drawString(c, "  振幅: " + utilsNum.BN(d).toFixed(2) + " %", a)) {
+          if (!Plotter.drawString(c, "  振幅: " + d.toFixed(2) + " %", a)) {
             return;
           }
-          if (!Plotter.drawString(c, "  量: " + utilsNum.BN(C.volume).toFixed(2), a)) {
+          if (!Plotter.drawString(c, "  量: " + C.volume.toFixed(2), a)) {
             return;
           }
         }
@@ -5514,7 +5514,7 @@
       if (isNaN(o)) {
         continue;
       }
-      f = "  " + i.getName() + ": " + utilsNum.BN(o).toFixed(2);
+      f = "  " + i.getName() + ": " + o.toFixed(2);
       g = i.getColor();
       if (g === undefined) {
         g = Theme.Color.Indicator0 + e;

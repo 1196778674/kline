@@ -10,8 +10,6 @@
     </style>
     <script src="jquery-3.3.1.min.js"></script>
     <script src="data.json"></script>
-    <script src="bignumber.min.js"></script>
-    <script src="bn.js"></script>
     <script src="kline.draw.js"></script>
     <script>
       $(function(){
@@ -19,6 +17,13 @@
           container: document.getElementById('test123'),
           klineType: 'xrpbtc',
           fixedNumber: 8
+        })
+        datas.forEach((item) => {
+          item[1] = parseFloat(item[1])
+          item[2] = parseFloat(item[2])
+          item[3] = parseFloat(item[3])
+          item[4] = parseFloat(item[4])
+          item[5] = parseFloat(item[5])
         })
         klineChart.updateKlienDatas(datas)
       })
