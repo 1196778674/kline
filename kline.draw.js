@@ -5648,13 +5648,13 @@
         var v = Math.max(TimelinePlotter.TP_DAY, TimelinePlotter.TIME_INTERVAL[u]);
         if (a % v == 0) {
           if (I == "zh-cn") {
-            p = E.toString() + "月" + B.toString() + "日";
+            p = `${E}月${B}日`;
           } else {
             if (I == "zh-tw") {
-              p = E.toString() + "月" + B.toString() + "日";
+              p = `${E}月${B}日`;
             } else {
               if (I == "en-us") {
-                p = TimelinePlotter.MonthConvert[E] + " " + B.toString();
+                p = `${TimelinePlotter.MonthConvert[E]} ${B}`;
               }
             }
           }
