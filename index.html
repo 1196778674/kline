@@ -9,23 +9,35 @@
       .canvas{width:1400px;height:600px;border:1px solid #ccc;position:relative;}
     </style>
     <script src="jquery-3.3.1.min.js"></script>
-    <script src="data.json"></script>
     <script src="kline.draw.js"></script>
     <script>
+      function aa(klineChart) {
+        $.ajax({
+          url: 'https://www.binance.com/api/v1/klines?symbol=EOSBTC&interval=1m',
+          type: 'get',
+          dataType: 'json',
+          success: function(datas) {
+            datas.forEach((item) => {
+              item[1] = parseFloat(item[1])
+              item[2] = parseFloat(item[2])
+              item[3] = parseFloat(item[3])
+              item[4] = parseFloat(item[4])
+              item[5] = parseFloat(item[5])
+            })
+            klineChart.updateKlienDatas(datas)
+            setTimeout(function() {
+              aa(klineChart)
+            }, 5000)
+          }
+        })
+      }
       $(function(){
         var klineChart = new KLineChart({
           container: document.getElementById('test123'),
           klineType: 'xrpbtc',
           fixedNumber: 8
         })
-        datas.forEach((item) => {
-          item[1] = parseFloat(item[1])
-          item[2] = parseFloat(item[2])
-          item[3] = parseFloat(item[3])
-          item[4] = parseFloat(item[4])
-          item[5] = parseFloat(item[5])
-        })
-        klineChart.updateKlienDatas(datas)
+        aa(klineChart)
       })
     </script>
   </head>
